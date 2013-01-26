@@ -35,7 +35,7 @@ sub readline {
 
 sub addhistory {
     my ($self, $history) = @_;
-    $self->history_enter($history);
+    $self->editline->history_enter($history);
 }
 
 sub IN  { $_[0]->{IN} }

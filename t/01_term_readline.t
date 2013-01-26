@@ -14,5 +14,7 @@ is($t->ReadLine, 'Term::ReadLine::EditLine');
 
 can_ok($t, $_) for qw(ReadLine readline addhistory IN OUT MinLine findConsole Attribs Features new);
 
+$t->addhistory('hoge');
+
 done_testing;
 
