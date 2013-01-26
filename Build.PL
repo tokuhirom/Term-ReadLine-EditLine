@@ -13,14 +13,13 @@ my $build = Module::Build->new(
     configure_requires   => { 'Module::Build' => '0.38' },
     requires             => {
         perl => '5.008005',
-        # 'Exporter'                      => '0',
-        'parent'                        => '0',
-        # 'Plack'                         => '0.9949',
+        'Term::ReadLine'                => '1.10',
+        'Term::EditLine'                => '0.05',
     },
 
     no_index    => { 'directory' => [ 'inc' ] },
-    name        => 'Term-ReadLine-Libedit',
-    module_name => 'Term::ReadLine::Libedit',
+    name        => 'Term-ReadLine-EditLine',
+    module_name => 'Term::ReadLine::EditLine',
 
     # script_files => [''],
 

@@ -85,7 +85,7 @@ perltidy.ERR$
 ^README.pod$
 ^README.mkdn$
 ^tags$
-^Term-ReadLine-Libedit-
+^Term-ReadLine-EditLine-
 ^MYMETA\.
 \b_build
 ^MANIFEST\.SKIP
