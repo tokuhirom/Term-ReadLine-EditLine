@@ -2,7 +2,7 @@ package Term::ReadLine::EditLine;
 use strict;
 use warnings;
 use 5.008005;
-our $VERSION = '0.01';
+our $VERSION = '1.0.0';
 
 use Term::EditLine;
 use Carp ();
@@ -24,7 +24,10 @@ sub new {
 sub editline { $_[0]->{editline} }
 
 sub readline {
-    my $self = shift;
+    my ($self, $prompt) = @_;
+    if (defined($prompt)) {
+        $self->editline->set_prompt($prompt);
+    }
     $self->editline->gets();
 }
 
@@ -87,23 +90,64 @@ __END__
 
 =head1 NAME
 
-Term::ReadLine::EditLine - ...
+Term::ReadLine::EditLine - Term::ReadLine style wrapper for Term::EditLine
 
 =head1 SYNOPSIS
 
-  use Term::ReadLine::EditLine;
+    use Term::ReadLine;
+
+    my $t = Term::ReadLine->new('program name');
+    while (defined($_ = $t->readline('prompt> '))) {
+        ...
+        $t->addhistory($_) if /\S/;
+    }
 
 =head1 DESCRIPTION
 
-Term::ReadLine::EditLine is
+Term::ReadLine::EditLine provides L<Term::ReadLine> interface using L<Term::EditLine>.
 
-B<THIS IS A DEVELOPMENT RELEASE. API MAY CHANGE WITHOUT NOTICE>.
+=head1 MOTIVATION
+
+L<Term::ReadLine::Gnu> is great, but it's hard to install on Mac OS X. Because it has pre-installed
+libedit but it does not contain GNU readline.
+
+Term::ReadLine::EditLine is very easy to install on OSX.
+
+=head1 INTERFACE
+
+You can use following methods in Term::ReadLine interface.
+
+=over 4
+
+=item Term::ReadLine->new($program_name[, IN, OUT])
+
+=item $t->addhistory($history)
+
+=item my $line = $t->readline()
+
+=item $t->ReadLine()
+
+=item $t->IN()
+
+=item $t->OUT()
+
+=item $t->findConsole()
+
+=item $t->Attribs()
+
+=item $t->Features()
+
+=back
+
+Additionally, you can use C<< $t->editline() >> method to access L<Term::EditLine> instance.
 
 =head1 AUTHOR
 
 Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>
 
 =head1 SEE ALSO
+
+This module provides interface for L<Term::ReadLine>, based on L<Term::EditLine>.
 
 =head1 LICENSE
 

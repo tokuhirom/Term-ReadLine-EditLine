@@ -9,7 +9,10 @@ BEGIN {
 }
 
 my $t = Term::ReadLine->new('test term::readline::editline');
-is($t, 
+ok($t, 'made something');
+is($t->ReadLine, 'Term::ReadLine::EditLine');
+
+can_ok($t, $_) for qw(ReadLine readline addhistory IN OUT MinLine findConsole Attribs Features new);
 
 done_testing;
 
