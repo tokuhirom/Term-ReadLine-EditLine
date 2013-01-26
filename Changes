@@ -1,4 +1,8 @@
 Revision history for Perl extension Term::ReadLine::EditLine
 
+1.0.0 2013-01-26T18:11:24
+
+    - initial release for CPAN
+
 0.01    Sat Jan 26 17:14:45 2013
     - original version
