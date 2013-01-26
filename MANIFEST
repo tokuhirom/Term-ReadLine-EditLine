@@ -1,6 +1,7 @@
 .travis.yml
 Build.PL
 Changes
+eg/yaperlsh.pl
 lib/Term/ReadLine/EditLine.pm
 LICENSE
 MANIFEST			This list of files
