@@ -143,6 +143,12 @@ You can use following methods in Term::ReadLine interface.
 
 Additionally, you can use C<< $t->editline() >> method to access L<Term::EditLine> instance.
 
+=head1 ENVIRONMENT
+
+The Term::ReadLine interface module uses the PERL_RL variable to decide which module to load; so if you want to use this module for all your perl applications, try something like:
+
+    export PERL_RL=EditLine
+
 =head1 AUTHOR
 
 Tokuhiro Matsuno E<lt>tokuhirom AAJKLFJEF@ GMAIL COME<gt>
