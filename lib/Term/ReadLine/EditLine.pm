@@ -93,6 +93,8 @@ __END__
 
 =encoding utf8
 
+=for stopwords libedit readline
+
 =head1 NAME
 
 Term::ReadLine::EditLine - Term::ReadLine style wrapper for Term::EditLine
