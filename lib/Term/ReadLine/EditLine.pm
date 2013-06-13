@@ -5,7 +5,10 @@ use 5.008005;
 our $VERSION = '1.1.0';
 
 use Term::EditLine;
+use Term::ReadLine;
 use Carp ();
+
+our @ISA = qw(Term::ReadLine::Stub);
 
 sub ReadLine { __PACKAGE__ }
 
